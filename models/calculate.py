@@ -6,7 +6,7 @@ class Calculate:
         self.__difficulty: int = difficulty
         self.__value1: int = self._generate_value
         self.__value2: int = self._generate_value
-        self.__operator: int = randint(1,3)
+        self.__operation: int = randint(1,3)
         self.__result: int = self._generate_result
 
     @property
@@ -22,7 +22,7 @@ class Calculate:
         return self.__value2
 
     @property
-    def operator(self: object) -> int:
+    def operation(self: object) -> int:
         return self.__operator
 
     @property
@@ -32,13 +32,13 @@ class Calculate:
     def __str__(self: object) -> str:
         op: str = ''
 
-        if self.operator == 1: 
+        if self.operation == 1: 
             op = 'Somar'
 
-        elif self.operator == 2:
+        elif self.operation == 2:
             op = 'Subtrair'
 
-        elif self.operator == 3: 
+        elif self.operation == 3: 
             op = 'Multiplicar'
 
         else: 
@@ -57,6 +57,6 @@ class Calculate:
     def check_result(self: object, response: int) -> bool:
         pass
 
-    def show_operator(self: object) -> None: 
+    def show_operation(self: object) -> None: 
         pass
     
