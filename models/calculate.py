@@ -23,7 +23,7 @@ class Calculate:
 
     @property
     def operation(self: object) -> int:
-        return self.__operator
+        return self.__operation
 
     @property
     def result(self: object) -> int: 
@@ -48,15 +48,49 @@ class Calculate:
 
     @property
     def _generate_value(self: object) -> int: 
-        pass
+        if self.difficulty == 1: 
+            return randint(0,10)
+        elif self.difficulty == 2: 
+            return randint(10,100)
+        elif self.difficulty == 3: 
+            return randint(100, 1000)
+        elif self.difficulty == 4:
+            return randint(1000,10000)
+        else: 
+            return randint(10000,10000000)
 
     @property
     def _generate_result(self: object) -> int:
-        pass
+        if self.operation == 1: #sum
+            return self.value1 + self.value2
+        elif self.operation == 2: #subtract 
+            return self.value1 - self.value2
+        else: #multiply
+            return self.value1 * self.value2
 
-    def check_result(self: object, response: int) -> bool:
-        pass
+    @property
+    def _op_symbol(self: object) -> str:
+        if self.operation == 1:
+            return '+'
+        elif self.operation == 2:
+            return '-'
+        else: 
+            return '*'
+
+
+    def check_result(self: object, answer: int) -> bool:
+        correct: bool = False
+
+        if self.result == answer:
+            print('Resposta correta!')
+            correct = True
+        else: 
+            print('Resposta errada! ')
+
+        print(f'{self.value1} {self._op_symbol} {self.value2} = {self.result}')
+
+        return correct
 
     def show_operation(self: object) -> None: 
-        pass
+        print(f'{self.value1} {self._op_symbol} {self.value2} =')
     

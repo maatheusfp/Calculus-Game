@@ -18,7 +18,7 @@ def play(score: int) -> None:
         score += 1
         print(f'Você tem {score} ponto(s). ')
 
-    continuing: int = int(input('Deseja continuar no jogo? Sim - 1 | Não - 2 '))
+    continuing: int = int(input('Deseja continuar no jogo? Sim - 1 | Não - 0 '))
 
     if continuing: 
         play(score)
